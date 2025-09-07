@@ -1,2 +1,2 @@
 # tiny-blog
-A microservice tiny blog implemented by node.js and React
+A tiny blog implemented by React(Next.js)
