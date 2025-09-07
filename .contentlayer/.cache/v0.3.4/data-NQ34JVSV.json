@@ -1,0 +1,28 @@
+{
+  "cacheItemsMap": {
+    "hello-world.md": {
+      "document": {
+        "title": "Hello World",
+        "date": "2025-09-07T00:00:00.000Z",
+        "summary": "My first blog post using Next.js + Contentlayer",
+        "body": {
+          "raw": "\nThis is the **first post** in my new blog.\n",
+          "html": "<p>This is the <strong>first post</strong> in my new blog.</p>"
+        },
+        "_id": "hello-world.md",
+        "_raw": {
+          "sourceFilePath": "hello-world.md",
+          "sourceFileName": "hello-world.md",
+          "sourceFileDir": ".",
+          "contentType": "markdown",
+          "flattenedPath": "hello-world"
+        },
+        "type": "Post",
+        "slug": "hello-world"
+      },
+      "documentHash": "1757250776244",
+      "hasWarnings": false,
+      "documentTypeName": "Post"
+    }
+  }
+}
