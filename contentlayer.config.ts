@@ -1,6 +1,10 @@
 import { defineDocumentType, makeSource, ComputedFields } from "contentlayer/source-files";
 import { extractTocHeadings } from 'pliny/mdx-plugins/index.js'
 import readingTime from 'reading-time'
+import path from 'path'
+import siteMetadata from "./data/siteMetadata";
+
+const root = process.cwd()
 
 const computedFields: ComputedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -30,7 +34,6 @@ export const Authors = defineDocumentType(() => ({
     occupation: { type: 'string' },
     company: { type: 'string' },
     email: { type: 'string' },
-    // twitter: { type: 'string' },
     linkedin: { type: 'string' },
     github: { type: 'string' },
     layout: { type: 'string' },
@@ -41,20 +44,39 @@ export const Authors = defineDocumentType(() => ({
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: "posts/*.md",
-  contentType: "markdown",
+  filePathPattern: "posts/**/*.mdx",
+  contentType: "mdx",
   fields: {
-    title: { type: "string", required: true },
-    date: { type: "date", required: true },
-    summary: { type: "string", required: true },
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    lastmod: { type: 'date' },
+    draft: { type: 'boolean' },
+    summary: { type: 'string' },
+    images: { type: 'list', of: { type: 'string' } },
+    authors: { type: 'list', of: { type: 'string' } },
+    layout: { type: 'string' },
+    bibliography: { type: 'string' },
+    canonicalUrl: { type: 'string' },
   },
   computedFields: {
-    slug: {
-      type: "string",
-      resolve: (post) => post._raw.sourceFileName.replace(/\.md$/, ""),
+    ...computedFields,
+    structuredData: {
+      type: 'json',
+      resolve: (doc) => ({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: doc.title,
+        datePublished: doc.date,
+        dateModified: doc.lastmod || doc.date,
+        description: doc.summary,
+        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
+        url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
+        author: doc.authors,
+      }),
     },
   },
-}));
+}))
 
 
 

@@ -1,7 +1,11 @@
 ---
-title: "Graph Algorithms"
-date: "2024-09-07"
-summary: "Graph construction and common algorithms"
+title: Graph Algorithms
+summary: "Graph construction and common graph algorithms"
+date: '2024-09-28'
+draft: false
+tags: ['Algorithm', 'Graph']
+authors: ['Chloe']
+layout: PostSimple
 ---
 
 # Graph Algorithms
@@ -54,8 +58,6 @@ public class Graph {
         nodes = new HashMap<>();
         edges = new HashSet<>();
     }
-    
-    
 }
 ```
 
@@ -69,7 +71,8 @@ For example, input is a n-3 matrix:
     [0, 2, 1]
 ]
 ```
-![img.png](src/img.png)
+
+
 
 ```java
 public static Graph createGraphWithEdgeFromTo(Integer[][] matrix) {
@@ -109,8 +112,11 @@ public static Graph createGraphWithEdgeFromTo(Integer[][] matrix) {
 Create the graph using GraphGenerator. The BFS and DFS algorithms are based on the defined structure.
 ### BFS
 - BFS relies on a queue to support FIFO.
-- Use a HashSet<Node> visited to record visited nodes. Nodes which are already been visited should not add in queue.
+- Use a `HashSet<Node> visited`
+to record visited nodes. Nodes which are already been visited should not add in queue.
 - After offer, do the visited operation immediately.
+
+
 ```java
 public static void BFS(Node node) {
     if(node == null) return;
@@ -137,9 +143,10 @@ public static void BFS(Node node) {
 
 ### DFS
 - Use a stack to maintain the traverse path.
-- Use a HashSet<Node> visited to record the visited nodes.
+- Use a `HashSet<Node> visited` to record the visited nodes.
 - Find one neighbor not visit, and then break.
 - When push, always push the parent first, and then the unvisited child.(Push twice)
+
 ```java
 public static void DFS(Node node) {
     Stack<Node> stack = new Stack<>();
@@ -176,16 +183,10 @@ Topology sort can also determine sequences with dependencies.
 - Remove the node from the graph, update the remaining in/out degree.
 - Find a in degree equal to 0 node again...
 
-To support the above process, need:
+- To support the above process, need: `HashMap<Node, Integer> inMap`
+- An in degree map, store all nodes' in degree. 
+- `Deque<Node> zeroNodes`A queue contains all zero in degree nodes.
 
-- HashMap<Node, Integer> inMap
-```
-An in degree map, store all nodes' in degree. 
-```
-- Deque<Node> zeroNodes
-```
-A queue contains all zero in degree nodes.
-```
 
 ```java
 public static List<Node> topologySort(Graph graph) {
@@ -218,13 +219,9 @@ public static List<Node> topologySort(Graph graph) {
 ## Cycles in Graph
 Two fundamental methods to detect cycle in graph.
 - DFS
-  ```
    Maintain the current path in stack. If dfs meet a node is already in the current path, suggests there is a cycle.
-  ```
 - Topological Sorting
-   ```aidl
    If the topology sort can't remove all the nodes, suggests there is a cycle.
-   ```
   
 ## Shortest Path in Graph
 ### Dijkstra
@@ -232,10 +229,8 @@ Given a weighted graph and a source vertex in the graph, find the shortest paths
 
 **Note:** The given graph does not contain any negative edge.
 
-- HashMap<Node, Integer> distanceMap
-  - maintain **Node from** to other node's distance
-- HashSet<Node> selectedNodes
-  - maintain selected nodes, these nodes can't be chosen twice
+- `HashMap<Node, Integer> distanceMap` maintain **Node from** to other node's distance
+- `HashSet<Node> selectedNodes` maintain selected nodes, these nodes can't be chosen twice
     
 ```java
 /**
@@ -286,6 +281,4 @@ Given a weighted graph and a source vertex in the graph, find the shortest paths
     }
 ```
 
-**Reference**
 
-https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/

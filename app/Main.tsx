@@ -1,14 +1,12 @@
 import Link from '@/components/Link'
-// import Tag from '@/components/Tag'
+import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
 import Image from 'next/image'
-import { Post } from '@/.contentlayer/generated'
 
 const MAX_DISPLAY = 5
 
-export default function Home({ posts }: { posts: Post[] }) {
+export default function Home({ posts }) {
   return (
     <>
       <div className="flex items-center justify-between space-y-4 mt-7">
@@ -70,16 +68,16 @@ export default function Home({ posts }: { posts: Post[] }) {
                         <div>
                           <h2 className="text-xl md:text-2xl font-bold  leading-8 tracking-tight">
                             <Link
-                              href={`/blog/${slug}`}
+                              href={`/post/${slug}`}
                               className="text-gray-800 hover:underline underline-offset-4 dark:text-gray-100 hover:dark:text-green-400"
                             >
                               <div>{title}</div>
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">
-                            {/* {tags.map((tag) => (
+                            {tags.map((tag) => (
                               <Tag key={tag} text={tag} />
-                            ))} */}
+                            ))}
                           </div>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
@@ -88,7 +86,7 @@ export default function Home({ posts }: { posts: Post[] }) {
                       </div>
                       <div className="text-base font-medium leading-6">
                         <Link
-                          href={`/blog/${slug}`}
+                          href={`/post/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >
@@ -106,7 +104,7 @@ export default function Home({ posts }: { posts: Post[] }) {
       {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
-            href="/blog"
+            href="/post"
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="All posts"
           >
@@ -114,11 +112,6 @@ export default function Home({ posts }: { posts: Post[] }) {
           </Link>
         </div>
       )}
-      {/* {siteMetadata.newsletter?.provider && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
-        </div>
-      )} */}
     </>
   )
 }

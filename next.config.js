@@ -16,6 +16,16 @@ module.exports = () => {
     experimental: {
       appDir: true,
     },
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'github.com',
+          port: '',
+          pathname: '/pano97/**/**'
+        },
+      ],
+    },
     webpack: (config, options) => {
       config.module.rules.push({
         test: /\.svg$/,
@@ -24,5 +34,6 @@ module.exports = () => {
 
       return config
     },
+    
   })
 }
