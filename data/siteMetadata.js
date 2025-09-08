@@ -12,13 +12,13 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'sarah.zhong2024@gmail.com',
   github: 'https://github.com/chloe-zh97',
-  twitter: '',
+  // twitter: '',
   linkedin: 'https://www.linkedin.com/in/sarah-zhong-0a1328194',
   locale: 'en-US',
   socialLinks: {
     github: 'https://github.com/chloe-zh97',
     linkedin: 'https://www.linkedin.com/in/sarah-zhong-0a1328194',
-    twitter: '',
+    // twitter: '',
     mail: 'mailto:sarah.zhong2024@gmail.com',
   },
   analytics: {

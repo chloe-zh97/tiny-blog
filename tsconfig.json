@@ -4,11 +4,13 @@
     "module": "ESNext",
     "lib": [
       "DOM",
-      "ESNext"
+      "ESNext",
+      "dom.iterable"
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "composite": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -17,7 +19,11 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@/components/*": ["components/*"],
+      "@/data/*": ["data/*"],
+      "@/layouts/*": ["layouts/*"],
+      "@/css/*": ["css/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "incremental": true,
     "esModuleInterop": true,
@@ -29,9 +35,13 @@
   },
   "include": [
     "next-env.d.ts",
+    "**/*.js",
+    "**/*.mjs",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.json",
     ".contentlayer/generated",
+    ".contentlayer/generated/**/*.json",
     ".next/types/**/*.ts"
   ],
   "exclude": [

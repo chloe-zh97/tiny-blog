@@ -8,7 +8,6 @@ import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
 import { usePathname } from 'next/navigation'
-import Image from 'next/image'
 
 const Header = () => {
   const pathname = usePathname()
@@ -20,7 +19,7 @@ const Header = () => {
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
               <div className="mr-3">
-                <Image src={Logo} alt="Logo" width={32} height={32} />
+                 <Logo />
               </div>
               {typeof siteMetadata.headerTitle === 'string' ? (
                 <div className="hidden h-6 text-2xl font-semibold sm:block -mt-2">

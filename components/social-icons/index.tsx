@@ -7,7 +7,7 @@ const components = {
   facebook: Facebook,
   youtube: Youtube,
   linkedin: Linkedin,
-  twitter: Twitter,
+  // twitter: Twitter,
   mastodon: Mastodon,
 }
 
