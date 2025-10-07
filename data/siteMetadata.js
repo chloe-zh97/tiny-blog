@@ -10,7 +10,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/chloe-zh97/tiny-blog',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'sarah.zhong2024@gmail.com',
+  email: 'chloe.zhong2025@gmail.com',
   github: 'https://github.com/chloe-zh97',
   // twitter: '',
   linkedin: 'https://www.linkedin.com/in/sarah-zhong-0a1328194',
@@ -19,7 +19,7 @@ const siteMetadata = {
     github: 'https://github.com/chloe-zh97',
     linkedin: 'https://www.linkedin.com/in/sarah-zhong-0a1328194',
     // twitter: '',
-    mail: 'mailto:sarah.zhong2024@gmail.com',
+    mail: 'mailto:chloe.zhong2025@gmail.com',
   },
   analytics: {
     // If you want to use an analytics provider you have to add it to the

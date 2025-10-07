@@ -1,42 +1,32 @@
 export type TechStack =
   | 'Python'
+  | 'Java'
+  | 'FastAPI'
   | 'TypeScript'
   | 'JavaScript'
-  | 'Java'
   | 'React'
   | 'NextJS'
-  | 'Svelte'
-  | 'TensorFlow'
-  | 'PyTorch'
-  | 'Streamlit'
   | 'PostgreSQL'
   | 'MySQL'
   | 'MongoDB'
-  | 'Firebase'
-  | 'FastAPI'
   | 'Docker'
   | 'Git'
-  | 'Prisma'
-  | 'Drizzle'
+  | 'TensorFlow'
+  | 'PyTorch'
 
 export const techStack: TechStack[] = [
   'Python',
+  'Java',
+  'FastAPI',
   'TypeScript',
   'JavaScript',
-  'Java',
   'React',
   'NextJS',
-  'Svelte',
-  'TensorFlow',
-  'PyTorch',
-  'Streamlit',
   'PostgreSQL',
   'MySQL',
   'MongoDB',
-  'Firebase',
-  'FastAPI',
   'Docker',
   'Git',
-  'Prisma',
-  'Drizzle',
+  'TensorFlow',
+  'PyTorch',
 ]
