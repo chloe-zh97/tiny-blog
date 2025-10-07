@@ -545,6 +545,183 @@ export const Drizzle = () => {
   )
 }
 
+export function NodeJS() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <path fill="#339933" d="M64 0C28.654 0 0 28.654 0 64s28.654 64 64 64 64-28.654 64-64S99.346 0 64 0z" />
+      <path fill="#fff" d="M64.6 103.4l-26.6-15.4v-30.8l26.6-15.4 26.6 15.4v30.8l-26.6 15.4zm-17-31.6v15l17 9.8 17-9.8v-15l-17-9.8-17 9.8zm0-30.8v15l17 9.8 17-9.8v-15l-17-9.8-17 9.8z" />
+    </svg>
+  );
+}
+
+export function GoLang() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#00ADD8" />
+      <path
+        fill="#fff"
+        d="M96.1 49.5c-3.3-2.6-7.7-2.7-10.9-1.1-1.2.6-2.2 1.3-3.2 2.1-1.6 1.2-2.9 2.8-4.2 4.4-1.3 1.5-2.5 3.1-3.8 4.5-1.1 1.1-2.3 2-3.6 2.8-1.4.9-2.9 1.6-4.5 2.1-2 .7-4 .9-6.1.9-.5 0-1 0-1.5-.1-2.5-.2-5.2-.6-7.5-1.6-1.4-.5-2.8-1.3-4-2.3-1.5-1.4-2.7-3.1-3.5-5-.6-1.6-.9-3.4-.9-5.2-.1-2.3.4-4.5 1.5-6.6 1.2-2.5 3-4.7 5.2-6.5 2.3-1.9 5-3.3 7.9-4.2 3-.9 6.2-1.1 9.3-.9 2.5.2 4.9.7 7.3 1.3 1.7.5 3.4 1.3 4.9 2.3 2.2 1.6 4 3.9 4.6 6.6.3 1.2.4 2.4.3 3.7-.1 1.7-.5 3.4-1.2 4.9-.7 1.8-1.8 3.4-3.2 4.7-1.4 1.3-3.1 2.2-4.8 3.1-1.9 1-3.8 2-5.7 2.9-1.5.7-3 1.4-4.6 2.1-1.2.5-2.5.9-3.8 1.2-1.7.4-3.4.5-5.1.5-.6 0-1.2 0-1.8-.1-.5 0-1-.1-1.5-.2z"
+      />
+    </svg>
+  );
+}
+
+export function Cpp() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#00599C" />
+      <path fill="#fff" d="M54 46h20v36H54z" />
+      <path fill="#fff" d="M70 62h16v4H70zM74 58h4v16h-4z" />
+    </svg>
+  );
+}
+
+export function Scala() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#DC322F" />
+      <path
+        fill="#fff"
+        d="M40 40s32-18 48 0c0 0-24-16-48 0zM40 54s32-18 48 0c0 0-24-16-48 0zM40 68s32-18 48 0c0 0-24-16-48 0z"
+      />
+    </svg>
+  );
+}
+
+export function SpringBoot() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#6DB33F" />
+      <path
+        fill="#fff"
+        d="M64 32c17.673 0 32 14.327 32 32s-14.327 32-32 32-32-14.327-32-32 14.327-32 32-32z"
+      />
+    </svg>
+  );
+}
+
+export function Flask() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#000000" />
+      <path
+        fill="#fff"
+        d="M48 40h32v48H48zM56 32h16v8H56z"
+      />
+    </svg>
+  );
+}
+
+export function Linux() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#FCC624" />
+      <path
+        fill="#000"
+        d="M64 20c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-6 30h-4v-4h4v4zm8 0h-4v-4h4v4z"
+      />
+    </svg>
+  );
+}
+
+export function Kubernetes() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#326CE5" />
+      <path
+        fill="#fff"
+        d="M64 40l16 16-16 16-16-16z"
+      />
+    </svg>
+  );
+}
+
+export function RabbitMQ() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#FF6600" />
+      <path
+        fill="#fff"
+        d="M40 64h48v8H40z"
+      />
+    </svg>
+  );
+}
+
+export function Kafka() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#231F20" />
+      <path
+        fill="#fff"
+        d="M64 32v64M48 48h32M48 80h32"
+      />
+    </svg>
+  );
+}
+
+export function Spark() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#E25A1C" />
+      <path
+        fill="#fff"
+        d="M64 40l8 48-16-48z"
+      />
+    </svg>
+  );
+}
+
+export function AWS() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#FF9900" />
+      <path
+        fill="#fff"
+        d="M64 48l16 32H48z"
+      />
+    </svg>
+  );
+}
+
+export function Azure() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#0078D4" />
+      <path
+        fill="#fff"
+        d="M48 48l32 32-32 32z"
+      />
+    </svg>
+  );
+}
+
+export function GCP() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#4285F4" />
+      <path
+        fill="#fff"
+        d="M64 32a32 32 0 1 1-32 32 32 32 0 0 1 32-32z"
+      />
+    </svg>
+  );
+}
+
+export function NLP() {
+  return (
+    <svg viewBox="0 0 128 128" height={22} width={22} className="bg-white">
+      <circle cx="64" cy="64" r="64" fill="#6A1B9A" />
+      <path
+        fill="#fff"
+        d="M64 36a28 28 0 1 0 28 28 28 28 0 0 0-28-28zm0 16a12 12 0 1 1-12 12 12 12 0 0 1 12-12z"
+      />
+    </svg>
+  );
+}
+
+
+
 export const DevIcons = {
   Python: PythonIcon,
   Java: Java,
@@ -565,25 +742,71 @@ export const DevIcons = {
   Firebase: Firebase,
   Prisma: Prisma,
   Drizzle: Drizzle,
+  NodeJS: NodeJS,
+  GoLang: GoLang,
+  Cpp: Cpp,
+  Scala: Scala,
+  SpringBoot: SpringBoot,
+  Flask: Flask,
+  Linux: Linux,
+  Kubernetes: Kubernetes,
+  RabbitMQ: RabbitMQ,
+  Kafka: Kafka,
+  Spark: Spark,
+  NLP: NLP,
+  AWS: AWS,
+  Azure: Azure,
+  GCP: GCP,
 }
+
+export const DevIconLabels: Record<string, string> = {
+  Python: "Python",
+  Java: "Java",
+  GoLang: "Go",
+  Cpp: "C++",
+  Scala: "Scala",
+  JavaScript: "JavaScript",
+  React: "React",
+  PostgreSQL: "PostgreSQL",
+  TypeScript: "TypeScript",
+  MongoDB: "MongoDB",
+  FastAPI: "FastAPI",
+  Docker: "Docker",
+  PyTorch: "PyTorch",
+  TensorFlow: "TensorFlow",
+  NextJS: "Next.js",
+  MySQL: "MySQL",
+  Git: "Git",
+  NodeJS: "Node.js",
+  SpringBoot: "SpringBoot",
+  Flask: "Flask",
+  Linux: "Linux",
+  Kubernetes: "Kubernetes",
+  RabbitMQ: "RabbitMQ",
+  Kafka: "Kafka",
+  Spark: "Spark",
+  NLP: "Natural Language Processing",
+  AWS: "AWS",
+};
+
 
 export function FamiliarTechStack() {
   return (
     <div className="flex flex-wrap gap-2">
       {techStack.map((t) => {
-        const Icon = DevIcons[t]
+        const Icon = DevIcons[t];
         return (
           <div
             key={t}
             className="flex items-center justify-center gap-2 text-white rounded-md border :border-white bg-black p-1 px-2 font-bold text-sm md:text-base"
           >
-            {t}
+            {DevIconLabels[t] || t} {/* Use display name mapping */}
             <div>
               <Icon />
             </div>
           </div>
-        )
+        );
       })}
     </div>
-  )
+  );
 }

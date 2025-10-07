@@ -1,32 +1,62 @@
 export type TechStack =
   | 'Python'
   | 'Java'
-  | 'FastAPI'
+  | 'GoLang'
+  | 'Scala'
+  | 'Cpp'
+  | 'NodeJS'
+  | 'NextJS'
   | 'TypeScript'
   | 'JavaScript'
   | 'React'
-  | 'NextJS'
+  | 'FastAPI'
+  | 'Flask'
+  | 'SpringBoot'
   | 'PostgreSQL'
   | 'MySQL'
   | 'MongoDB'
+  | 'RabbitMQ'
+  | 'Kafka'
+  | 'Linux'
   | 'Docker'
+  | 'Kubernetes'
   | 'Git'
-  | 'TensorFlow'
-  | 'PyTorch'
+  | 'Spark'
+  | 'AWS'
+  | 'Azure'
+  | 'GCP'
+  | 'NLP'
+  // | 'TensorFlow'
+  // | 'PyTorch'
 
 export const techStack: TechStack[] = [
   'Python',
   'Java',
+  'GoLang',
+  'Scala',
+  'Cpp',
+  'NodeJS',
+  'NextJS',
   'FastAPI',
+  'Flask',
+  'SpringBoot',
   'TypeScript',
   'JavaScript',
   'React',
-  'NextJS',
   'PostgreSQL',
   'MySQL',
   'MongoDB',
+  'RabbitMQ',
+  'Kafka',
+  'Linux',
   'Docker',
+  'Kubernetes',
   'Git',
-  'TensorFlow',
-  'PyTorch',
+  'Spark',
+  'AWS',
+  'Azure',
+  'GCP',
+  'NLP',
+  // 'TensorFlow',
+  // 'PyTorch',
 ]
