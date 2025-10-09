@@ -12,7 +12,7 @@ export default function PostCard({
 }) {
   return (
     <div className="border rounded-lg p-4 mb-4 hover:shadow-lg transition">
-      <Link href={`/posts/${post.slug}`}>
+      <Link href={`/post/${post.slug}`}>
         <h2 className="text-xl font-semibold">{post.title}</h2>
       </Link>
       <p className="text-gray-600 text-sm">{new Date(post.date).toLocaleDateString()}</p>
