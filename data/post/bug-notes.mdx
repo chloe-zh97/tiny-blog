@@ -1,0 +1,214 @@
+---
+title: Bug Notes Collection
+summary: "Common coding bugs and solutions encountered during Leetcode practice"
+date: '2025-10-09'
+draft: false
+tags: ['Algorithm', 'Bug Note']
+authors: ['Chloe']
+layout: PostSimple
+---
+
+# Bug Notes Collection
+This note summarizes common bugs encountered while solving Leetcode problems. Each section is organized by bug type and provides concise explanations and corrected code snippets.
+
+---
+
+## 🧵 String
+
+### Initialization of `StringBuffer`
+When initializing an array of `StringBuffer`, use a loop instead of direct assignment.
+
+```java
+StringBuffer[] sb = new StringBuffer[n]; // Wrong
+
+// Each element must be initialized separately:
+for(int i=0; i<n; i++) sb[i] = new StringBuffer();
+```
+
+
+### Matching between source and target strings
+
+When performing character-by-character matching between two strings:
+
+- Use while when matching continuously.
+- Use if when only comparing one position.
+
+```java
+// Continuous matching
+while(i < n && j < m && s.charAt(i) == t.charAt(j))
+
+// Single position matching
+if(haystack.charAt(i + j) != needle.charAt(j))
+```
+
+### Fixed start, find the end in a sentence
+In the sentence like "  Hello World How are you. ", to re-organize the sentence to multiple lines,
+normally we need to find the [left, right] boundry of each line.
+When searching for a right boundary of word, remember to update pointers correctly.
+
+```java
+start = i;
+i++;
+
+int right = left++;
+while(right < words.length && curLen + 1 + words[right].length() <= width) {
+    // do something
+    // remember add the ' '
+    curLen += words[right].length() + 1;
+}
+```
+
+
+### Edge case and empty String
+When checking if string s is a substring of t, remember to handle the empty string case "".
+```java
+    if(s == null || s.trim().isEmpty())
+```
+
+### String split using pattern
+When splitting strings by keywords like BEGIN and END, use word boundaries \b to avoid partial matches.
+```java
+// Split by END
+String[] words = line.split("\\bEND\\b\\s*");
+
+// Split by BEGIN
+String[] words2 = line2.split("\\bBEGIN\\b\\s*");
+```
+
+
+## 🔍 Two Pointers
+### Duplicate removal in 3Sum
+When skipping duplicate elements after finding a valid triplet, ensure both i and j move correctly.
+```java
+if(nums[i] + nums[j] == -nums[k]) {
+     List<Integer> row = new ArrayList<>(Arrays.asList(nums[k], nums[i], nums[j]));
+     ans.add(row);
+
+     i++;
+     j--;
+     while(i < j && i != k + 1 && nums[i] == nums[i - 1]) i++;
+     while(i < j && j != n - 1 && nums[j] == nums[j + 1]) j--;
+}
+
+```
+
+## 🗺️ Map
+### Update and remove element in map
+When replacing an element with the last element in an array and removing it, update the map carefully.
+If the element to remove is the same as the last element, update the map before removing it.
+```java
+map.put(lastElem, oldPosition);
+map.remove(val);
+```
+
+## 🔍 Sliding Window
+### Update i and j after calculating window length
+
+In a sliding window, ensure updates to i and j happen after using j - i + 1 to calculate window length.
+
+```java
+while(j < m) {
+    remain[ss[j]]--;
+    if(remain[ss[j]] == 0) cnt++;
+
+    while(cnt == distinct) {
+        remain[ss[i]]++;
+        if(remain[ss[i]] == 1) cnt--;
+
+        if(minLen > j - i + 1) {
+             minLen = j - i + 1;
+             start = i;
+        }
+        // i update at the end
+        i++;
+    }
+    // j update at the end
+    j++;
+}
+
+```
+
+## 🧮 Matrix
+### Row and column tracking with maps
+When using `Map<Integer, Set<Integer>>` to record numbers in each row or column, make sure to pass the correct index i.
+```java
+boolean res = checkRowOrCol(rowMap, i, num)
+           && checkRowOrCol(colMap, j, num)
+           && checkGroup(groupMap, num, i, j);
+
+```
+
+### Updating matrix boundaries
+When traversing a matrix in spiral order, update the four boundaries (top, bottom, left, right) after completing each loop.
+```java
+    for(int j=left;j<=right;j++) {
+        ans.add(matrix[top][j]);
+    }
+    top++;
+
+    for(int i=top;i<=bottom;i++) {
+        ans.add(matrix[i][right]);
+    }
+    right--;
+```
+
+### Diagonal transformation
+When transposing or swapping along the diagonal, only operate on elements where j < i to avoid double swaps.
+```java
+for(int i = 0; i < n; i++) {
+  for(int j = 0; j < i; j++) {
+
+```
+
+
+### Loop boundaries and zero row detection
+When processing matrix rows:
+
+- The 0th row might already be checked.
+- Start looping from i = 1, but j should still start from 0.
+```java
+for(int i = 1; i < m; i++) {
+    for(int j = 0; j < n; j++) {
+
+```
+
+### Direction array mistakes
+When defining directions for 8-neighbor traversal, make sure the direction array is correctly written.
+```java
+private int[][] dirs = {
+    {-1, -1}, {-1, 0}, {-1, 1},
+    {0, -1}, {0, 1},
+    {1, -1}, {1, 0}, {1, 1}
+};
+
+```
+
+### Avoid boundary check bugs in nested loops
+When looping over neighbors using index ranges, direct index loops may skip iteration if i = 0.
+Use dirs array instead.
+```java
+// Wrong!
+// Bug 1: 当 i=0 时，循环根本没进入
+        // for(int row=i-1;row>=0 && row <= Math.min(i+1, M-1);row++) {
+        //     for(int col=j-1; col >= 0 && col <= Math.min(j+1, N-1); col++) {
+        //         // skip self
+        //         if(row == i && col == j) continue;
+
+        //         if(wasLive(board, row, col)) liveCnt++;
+        //         else dieCnt++;
+        //     }
+        // } 
+
+
+for(int[] dir: dirs) {
+    int x = dir[0] + i, y = dir[1] + j;
+}
+```
+
+### Count all transitions correctly in state change
+When counting alive cells in Game of Life:
+Include both ALIVE → ALIVE and ALIVE → DIE states.
+```java
+liveCnt += (board[x][y] == ALIVE || board[x][y] == ALIVETODIED) ? 1 : 0;
+```
+
